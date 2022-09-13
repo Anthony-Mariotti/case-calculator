@@ -13,7 +13,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>CaseCalculator</ApplicationTitle>
+		<ApplicationTitle>Case Calculator</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.anthonymariotti.casecalculator.app</ApplicationId>
@@ -34,16 +34,21 @@
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0-ios'">
 	  <CodesignKey>Apple Development: Created via API (CF2GQT5346)</CodesignKey>
-	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
-	  <ProvisioningType>manual</ProvisioningType>
+	  <CodesignProvision>VS: com.anthonymariotti.casecalculator Development</CodesignProvision>
+	  <ProvisioningType>automatic</ProvisioningType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
-	  <MtouchProfiling>False</MtouchProfiling>
+	  <MtouchProfiling>True</MtouchProfiling>
+	  <MtouchDebug>True</MtouchDebug>
+	  <MtouchNoSymbolStrip>True</MtouchNoSymbolStrip>
+	  <MtouchUseLlvm>True</MtouchUseLlvm>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
-	  <MtouchProfiling>False</MtouchProfiling>
+	  <MtouchProfiling>True</MtouchProfiling>
+	  <MtouchDebug>True</MtouchDebug>
+	  <MtouchNoSymbolStrip>True</MtouchNoSymbolStrip>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -66,7 +71,24 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\CaseCalculator.Models\CaseCalculator.Models.csproj" />
-	  <ProjectReference Include="..\CaseCalculator.Utilities\CaseCalculator.Utilities.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="AboutPage.xaml.cs">
+	    <DependentUpon>AboutPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="CalculatorPage.xaml.cs">
+	    <DependentUpon>CalculatorPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ContributePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

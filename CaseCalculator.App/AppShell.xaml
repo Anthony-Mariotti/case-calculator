@@ -5,10 +5,35 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CaseCalculator.App">
 
-    <ShellContent
-        Title="Calculator"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage"
-        Icon=""/>
-    
+    <TabBar>
+        <Tab 
+            Title="Calculator"
+            Icon="calculator.png">
+            
+            <ShellContent
+                Title="Case Calculator"
+                ContentTemplate="{DataTemplate local:Calculator}"
+                Route="Calculator" />
+        </Tab>
+
+        <Tab
+            Title="Contribute"
+            Icon="chatbubble.png">
+
+            <ShellContent
+                Title="Contribute"
+                ContentTemplate="{DataTemplate local:Contribute}"
+                Route="Contribute" />
+        </Tab>
+        
+        <Tab 
+            Title="About"
+            Icon="information.png">
+            
+            <ShellContent
+                Title="About"
+                ContentTemplate="{DataTemplate local:About}"
+                Route="About" />
+        </Tab>
+    </TabBar>
 </Shell>

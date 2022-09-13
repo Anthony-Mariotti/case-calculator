@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CaseCalculator.App.Calculator">
+    
+    <VerticalStackLayout Margin="12">
+        <Label
+            FontSize="Title"
+            Text="Currency" />
+
+        <ActivityIndicator
+            x:Name="CurrencyActivity" 
+            IsRunning="True" />
+
+        <Label
+            x:Name="CurrencyErrorLabel" IsVisible="False" />
+
+        <Picker
+            x:Name="CurrencyPicker"
+            FontSize="Medium"
+            Title="Pick a currency"
+            IsVisible="False"/>
+
+        <Label
+            FontSize="Title"
+            Text="Case Selection"
+            Margin="0,20,0,0" />
+
+        <Picker 
+            x:Name="CasePicker"
+            FontSize="Medium"
+            Title="Pick a case"
+            SelectedIndexChanged="CasePicker_SelectedIndexChanged" />
+
+        <Label
+            FontSize="Title"
+            Text="Current Market Price"
+            Margin="0,20,0,0" />
+
+        <HorizontalStackLayout>
+            <Label
+                FontSize="Medium"
+                x:Name="MarketPriceLabel" />
+            
+            <ActivityIndicator
+                x:Name="MarketPriceActivity"/>
+        </HorizontalStackLayout>
+        
+        <Label
+            FontSize="Title"
+            Text="How many cases?"
+            Margin="0,20,0,0" />
+
+
+        <Entry
+            x:Name="CaseAmountEntry"
+            FontSize="Medium"
+            Keyboard="Numeric"
+            Text="0"
+            TextChanged="CaseAmountEntry_TextChanged"/>
+
+        <Label
+            FontSize="Title"
+            Text="Estimated Cost"
+            Margin="0,20,0,0"/>
+
+        <HorizontalStackLayout>
+            <Label
+                x:Name="EstimatedCost"
+                FontSize="Medium" />
+
+            <ActivityIndicator
+                x:Name="EstimatedCostActivity" />
+        </HorizontalStackLayout>
+        
+
+    </VerticalStackLayout>
+</ContentPage>
